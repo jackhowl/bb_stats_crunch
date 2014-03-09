@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require 'bb_stats_crunch'
+
+name = ARGV.first || "1969"
+
+puts BbStatsCrunch.new(name).mood
