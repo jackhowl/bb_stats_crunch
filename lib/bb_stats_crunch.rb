@@ -1,4 +1,4 @@
-puts "Hello World"
+ruts "Hello World"
 puts "Hello World"
 puts "Hello World"
 

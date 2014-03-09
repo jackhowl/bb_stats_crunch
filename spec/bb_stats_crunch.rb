@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
 
-  require 'bb_stats_crunchbit.rb'
+  require 'bb_stats_crunch.rb'
 
 describe BbStatsCrunch do
 
