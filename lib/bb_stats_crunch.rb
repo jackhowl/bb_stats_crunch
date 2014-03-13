@@ -1,16 +1,23 @@
+## This class reads in a CSV file and outputs some data to an OUTPUT file
+# as well as to the user screen.
+
 require 'csv'
+
 class BbStatsCrunch
+
+#  puts "enter year (valid year between 1960 - 1969)"
+#  year = gets.chomp
   
   attr_accessor :team1, :team2, :score1, :score2, :viswins, :homewins
 
   def initialize(team1, team2, score1, score2, viswins, homewins, totalscore)
     @team1 = team1
     @team2 = team2
-    @score1 = Float(score1)
-    @score2 = Float(score2)
-    @viswins = Float(viswins)
-    @homewins = Float(homewins)
-    @totalscore = Float(totalscore)
+    @score1 = score1
+    @score2 = score2
+    @viswins = viswins
+    @homewins = homewins
+    @totalscore = totalscore
   end
 
 #  puts "enter year (valid year between 1960 - 1969)"
