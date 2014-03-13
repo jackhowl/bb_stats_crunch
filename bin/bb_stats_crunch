@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
+#require '/Users/xok6/class/RubyWinter2014/week6/exercises/bb_stats_crunch/lib/bb_stats_crunch'
 require 'bb_stats_crunch'
 
-name = ARGV.first || "1969"
+#name = ARGV.first || "1969"
 
-puts BbStatsCrunch.new(name).mood
+puts "gem ran to completion"

@@ -11,5 +11,5 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
   s.name        = "bb_stats_crunch"
   s.summary     = "Make a baseball stats compilation gem"
-  s.version     = "0.1.0"
+  s.version     = "0.1.2"
 end
