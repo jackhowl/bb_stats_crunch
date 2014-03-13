@@ -1,41 +1,41 @@
-puts "Hello World"
-puts "Hello World"
-puts "Hello World"
-
 require 'csv'
 class BbStatsCrunch
-  attr_accessor :name
+  
+  attr_accessor :team1, :team2, :score1, :score2, :viswins, :homewins
 
-  def initialize name
-    @name = name
+  def initialize(team1, team2, score1, score2, viswins, homewins, totalscore)
+    @team1 = team1
+    @team2 = team2
+    @score1 = Float(score1)
+    @score2 = Float(score2)
+    @viswins = Float(viswins)
+    @homewins = Float(homewins)
+    @totalscore = Float(totalscore)
   end
 
-  def mood
-    "#{name} is always HAPPY!!"
-  end
+#  puts "enter year (valid year between 1960 - 1969)"
+#  year = gets.chomp
 
-hometeam = 0
-visteam = 0
+  year = 1960
+  homewins, viswins, totalscore = 0, 0, 0
 
-module GetStats
-@hometeam = 0
-@visteam = 0
-  CSV.foreach("files/GL1968.TXT") do |row|
+  File.open("files/GL#{year}.OUTPUT", 'w') do |content|
+  CSV.foreach("files/GL#{year}.TXT") do |row|
     team1 = row[3]
     score1 = row[9].to_i
     team2 = row[6]
     score2 = row[10].to_i
+    totalscore = totalscore + score1 + score2
       if score1 > score2
-    puts "The visitors  won #{team1} #{score1} #{team2} #{score2}"
-    @visteam += 1
+        viswins += 1
+        content.puts "#{team1} beat #{team2} by a score of #{score1} to #{score2}"
       else
-    puts "The home team won #{team2} #{score2} #{team1} #{score1}"
-    @hometeam += 1
-end
-end
- #   puts "the home team won" @hometeam
- #   puts "the visiting team won" @visteam
- #   printf "hello" @visteam
- #    puts "#{hometeam}"
-end
+        homewins += 1
+        content.puts "#{team2} beat #{team1} by a score of #{score2} to #{score1}"
+      end
+    end
+  end
+  puts "The home team won #{homewins} times."
+  puts "The vistors won #{viswins} times."
+  puts "Total runs scored in #{year} was #{totalscore}."
 end
